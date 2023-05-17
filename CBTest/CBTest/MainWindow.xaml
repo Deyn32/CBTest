@@ -1,0 +1,27 @@
+﻿<Window x:Class="CBTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CBTest"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Button x:Name="btnLoadXML" Content="Загрузить XML" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Height="32" Click="BtnLoadXML_Click"/>
+        <DataGrid x:Name="dgClientInfo" ItemsSource="{Binding Path=dataBindings, Mode=TwoWay}" Margin="10,52,10,10" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" UseLayoutRounding="False" ScrollViewer.CanContentScroll="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Регион" Binding="{Binding RegionName}"/>
+                <DataGridTextColumn Header="БИК" Binding="{Binding BIC}"/>
+                <DataGridTextColumn Header="Статус организации" Binding="{Binding ParticipantStatus}"/>
+                <DataGridTextColumn Header="Номер аккаунта" Binding="{Binding AccountNumber}"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="CBR Бик" Binding="{Binding CBRBIC}"/>
+                <DataGridTextColumn Header="Статус аккаунта" Binding="{Binding AccountStatus}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
